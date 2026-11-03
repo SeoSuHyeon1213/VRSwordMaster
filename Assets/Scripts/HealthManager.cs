@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 using UnityEngine.XR;
 
 public class HealthManager : MonoBehaviour
@@ -40,7 +41,7 @@ public class HealthManager : MonoBehaviour
     bool wasTriggerPressed;
     readonly List<InputDevice> inputDevices = new();
 
-    static readonly WaitForSeconds Wait3s = new(3f);
+    static readonly WaitForSecondsRealtime Wait3sRealtime = new(3f);
     static readonly Color ColorHigh = Color.green;
     static readonly Color ColorMid = Color.yellow;
     static readonly Color ColorLow = Color.red;
@@ -73,6 +74,7 @@ public class HealthManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        ResumeGameplay();
         cachedCam = null;
         isGameplayScene = scene.name == "GameScene";
         isGameOver = false;
@@ -279,7 +281,7 @@ public class HealthManager : MonoBehaviour
         Vector3 basePos = cam.transform.position + cam.transform.forward * 3f;
         Quaternion rot = cam.transform.rotation;
 
-        hpText.transform.SetPositionAndRotation(basePos + cam.transform.up * 1.0f, rot);
+        hpText.transform.SetPositionAndRotation(basePos + cam.transform.up * 1f, rot);
         resultCanvas.transform.SetPositionAndRotation(basePos, rot);
         resultCanvas.worldCamera = cam;
 
@@ -317,8 +319,10 @@ public class HealthManager : MonoBehaviour
         isGameOver = true;
         hpText.text = "";
         ShowResult("GAME OVER", Color.red);
+        FreezeGameplay();
 
-        yield return Wait3s;
+        // timeScale 이 0 이므로 실제 시간 기준으로 대기
+        yield return Wait3sRealtime;
 
         if (isResultOpen)
         {
@@ -326,6 +330,29 @@ public class HealthManager : MonoBehaviour
         }
 
         SceneManager.LoadScene("Intro");
+    }
+
+    // 게임 오버 시 노트 이동, 스폰, 음악, 배경 영상 등 모든 진행을 멈춘다
+    void FreezeGameplay()
+    {
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+
+        foreach (var spawner in FindObjectsByType<Spawner>(FindObjectsSortMode.None))
+        {
+            spawner.enabled = false;
+        }
+
+        foreach (var video in FindObjectsByType<VideoPlayer>(FindObjectsSortMode.None))
+        {
+            if (video.isPlaying) video.Pause();
+        }
+    }
+
+    static void ResumeGameplay()
+    {
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
     }
 
     void ShowResult(string title, Color titleColor)

@@ -110,3 +110,6 @@ InitTestScene*.unity*
 
 # Local Claude Code settings
 .claude/settings.local.json
+
+# Burst build debug info
+*_BurstDebugInformation_DoNotShip/

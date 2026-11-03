@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efedc204d34f2449817b823a4b732c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cube
+  missDistance: 1.5
 --- !u!1 &9064770032780842082
 GameObject:
   m_ObjectHideFlags: 0

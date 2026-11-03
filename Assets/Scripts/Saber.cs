@@ -1,18 +1,60 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Saber : MonoBehaviour
 {
+    public enum SaberColor { Auto, Red, Blue }
+
     public LayerMask layer;
+
+    [Tooltip("이 검이 칠 수 있는 노트 색. Auto 는 컨트롤러 이름으로 결정 (Left = 빨강, Right = 파랑)")]
+    [SerializeField] private SaberColor saberColor = SaberColor.Auto;
 
     [Header("Break Effect")]
     [SerializeField] private GameObject breakEffectPrefab;
     [SerializeField] private float effectLifeTime = 1.2f;
 
+    [Header("Haptics")]
+    [SerializeField, Range(0f, 1f)] private float hapticAmplitude = 0.6f;
+    [SerializeField] private float hapticDuration = 0.08f;
+
     Vector3 prevPos;
+    int ownNoteLayer = -1;
+    XRNode? handNode;
 
     void Start()
     {
         prevPos = transform.position;
+        handNode = ResolveHandNode();
+        ownNoteLayer = ResolveOwnNoteLayer();
+    }
+
+    // 컨트롤러 이름(Left/Right)으로 이 검을 쥔 손을 결정
+    XRNode? ResolveHandNode()
+    {
+        for (Transform t = transform; t != null; t = t.parent)
+        {
+            string n = t.name.ToLowerInvariant();
+            if (n.Contains("left")) return XRNode.LeftHand;
+            if (n.Contains("right")) return XRNode.RightHand;
+        }
+
+        return null;
+    }
+
+    int ResolveOwnNoteLayer()
+    {
+        SaberColor color = saberColor;
+        if (color == SaberColor.Auto && handNode.HasValue)
+        {
+            color = handNode.Value == XRNode.LeftHand ? SaberColor.Red : SaberColor.Blue;
+        }
+
+        if (color == SaberColor.Red) return LayerMask.NameToLayer("R");
+        if (color == SaberColor.Blue) return LayerMask.NameToLayer("B");
+
+        Debug.LogWarning("[Saber] Could not determine saber color, any note can be cut: " + name);
+        return -1;
     }
 
     void Update()
@@ -21,6 +63,17 @@ public class Saber : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1, layer))
         {
+            // 다른 색 노트를 치면 콤보가 끊기고 체력이 감소한다
+            if (ownNoteLayer >= 0 && hit.transform.gameObject.layer != ownNoteLayer)
+            {
+                if (ComboManager.Instance != null) ComboManager.Instance.RegisterMiss();
+                if (HealthManager.Instance != null) HealthManager.Instance.TakeDamage();
+
+                Destroy(hit.transform.gameObject);
+                prevPos = transform.position;
+                return;
+            }
+
             Vector3 v1 = transform.position - prevPos;
 
             if (Vector3.Angle(v1, hit.transform.up) > 130)
@@ -29,11 +82,23 @@ public class Saber : MonoBehaviour
                 if (HealthManager.Instance != null) HealthManager.Instance.Heal();
 
                 PlayBreakEffect(hit);
+                PlayHaptic();
                 Destroy(hit.transform.gameObject);
             }
         }
 
         prevPos = transform.position;
+    }
+
+    void PlayHaptic()
+    {
+        if (!handNode.HasValue || hapticAmplitude <= 0f || hapticDuration <= 0f) return;
+
+        InputDevice device = InputDevices.GetDeviceAtXRNode(handNode.Value);
+        if (device.isValid)
+        {
+            device.SendHapticImpulse(0, hapticAmplitude, hapticDuration);
+        }
     }
 
     void PlayBreakEffect(RaycastHit hit)
