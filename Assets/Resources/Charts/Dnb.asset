@@ -1,0 +1,4413 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18114a08620c6248a32ffd4aaf4e10c, type: 3}
+  m_Name: Dnb
+  m_EditorClassIdentifier: Assembly-CSharp::BeatChart
+  song: {fileID: 8300000, guid: 273da3c9bf585004697ece0dc2846f63, type: 3}
+  difficulty: Expert
+  bpm: 120
+  notes:
+  - time: 1.1197501
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 1.1197501
+    lineIndex: 1
+    lineLayer: 1
+    type: 1
+    cutDirection: 7
+  - time: 2.5903804
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 2.9195025
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 3.0805688
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 3.2391207
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 3.7392712
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 3.9007945
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 4.2296743
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 4.399344
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 7
+  - time: 4.720285
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 5.0507016
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 5.2104125
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 5.369795
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 5.539875
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 5.699904
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 6.029129
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 6
+  - time: 6.029129
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 7.179279
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 7.340581
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 7.669025
+    lineIndex: 3
+    lineLayer: 2
+    type: 0
+    cutDirection: 3
+  - time: 8.159523
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 8.320888
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 8.649265
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 8.980482
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 9.470792
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 9.799839
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 9.949724
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 10.289082
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 10.450509
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 10.609832
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 10.77949
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 11.109191
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 11.2690735
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 11.429143
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 11.599025
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 13.070943
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 13.719848
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 13.889679
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 14.210158
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 14.870404
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 15.199301
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 15.360809
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 15.849352
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 16.009535
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 5
+  - time: 16.340096
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 16.500795
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 16.82992
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 16.98953
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 17.320328
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 17.650566
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 18.139828
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 18.470594
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 18.9593
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 19.119057
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 19.770239
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 19.770239
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 20.590572
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 20.590572
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 21.08094
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 21.240849
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 21.729445
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 22.060028
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 22.550797
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 22.70993
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 23.209803
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 23.52943
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 24.180164
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 24.340572
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 24.669176
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 24.99957
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 25.159855
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 25.489399
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 25.820238
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 26.140144
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 26.630077
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 26.790012
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 27.120125
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 27.279354
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 27.610054
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 27.769209
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 28.09084
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 28.59058
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 28.74952
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 29.08024
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 29.240341
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 29.559492
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 29.729176
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 30.049147
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 30.380667
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 30.700726
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 31.030067
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 31.190212
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 31.519987
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 32.010296
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 32.33011
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 32.820637
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 33.150505
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 33.479996
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 33.970757
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 34.289906
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 34.619633
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 34.779587
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 35.110935
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 35.589886
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 35.76094
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 7
+  - time: 36.080177
+    lineIndex: 2
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 36.40973
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 36.74059
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 37.06072
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 37.3903
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 37.710938
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 37.870834
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 38.19903
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 38.3708
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 38.530872
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 38.69098
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 7
+  - time: 38.850132
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 39.01956
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 39.340954
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 39.50901
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 39.66966
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 39.829113
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 39.98947
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 40.15958
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 40.320244
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 40.639744
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 40.810535
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 41.13988
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 5
+  - time: 41.30097
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 41.620354
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 41.950775
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 42.110477
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 42.43985
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 42.599064
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 42.929276
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 43.249012
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 43.41998
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 43.58039
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 43.740852
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 43.899433
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 44.23014
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 44.54921
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 44.720276
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 44.880142
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 45.039474
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 45.209538
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 45.3696
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 45.530807
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 45.68923
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 46.0195
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 46.349564
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 46.509727
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 46.83939
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 47.160484
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 47.489643
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 47.809658
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 47.980103
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 48.140533
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 48.299522
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 48.629223
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 48.790325
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 48.949677
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 49.28064
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 49.440273
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 49.600452
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 49.760933
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 49.929306
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 50.090523
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 50.25954
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 50.420425
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 50.73992
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 50.909264
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 51.070576
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 51.390995
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 51.55959
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 51.72079
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 52.050934
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 52.36935
+    lineIndex: 1
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 52.539494
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 52.859116
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 53.019485
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 53.349255
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 53.669067
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 53.99992
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 54.159317
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 54.319973
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 54.490192
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 54.809727
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 54.980946
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 55.299137
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 55.469833
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 55.630756
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 55.790928
+    lineIndex: 1
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 55.94978
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 56.12069
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 56.27931
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 56.439316
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 56.60044
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 56.770958
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 56.93042
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 57.100845
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 57.580406
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 57.739246
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 57.91014
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 58.230495
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 58.400085
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 58.71977
+    lineIndex: 1
+    lineLayer: 1
+    type: 0
+    cutDirection: 5
+  - time: 58.87965
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 59.050262
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 59.21057
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 59.369976
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 59.529655
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 59.85966
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 60.179035
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 60.350693
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 60.66963
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 60.84023
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 61.000267
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 61.160877
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 61.3302
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 61.64995
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 61.80989
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 61.970554
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 62.14042
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 62.299675
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 62.459053
+    lineIndex: 0
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 62.79018
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 63.11947
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 63.27949
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 63.44075
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 63.599922
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 63.77073
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 64.08977
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 64.74077
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 65.38959
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 65.55954
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 65.87914
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 66.36936
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 66.8593
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 67.180984
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 67.34066
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 67.66935
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 67.98982
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 68.47978
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 68.64985
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 69.29016
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 69.460526
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 69.63017
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 69.78043
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 69.9399
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 70.27037
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 70.60012
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 70.7609
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 71.079025
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 71.240654
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 71.57098
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 71.90088
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 72.05936
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 72.39024
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 72.8709
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 73.20064
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 73.36063
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 73.68959
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 73.84976
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 74.00932
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 74.65919
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 74.99062
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 75.15091
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 75.47003
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 75.80086
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 75.96073
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 76.12977
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 76.29024
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 76.449234
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 76.77967
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 77.10076
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 77.260376
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 77.430115
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 77.59007
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 77.74936
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 77.91088
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 78.07937
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 78.399185
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 78.73083
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 78.890854
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 79.04905
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 79.36912
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 79.69901
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 79.86078
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 80.18935
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 80.35032
+    lineIndex: 2
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 80.510475
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 80.66951
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 80.83954
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 81.00033
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 81.15984
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 81.32962
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 81.49042
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 81.649284
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 81.810326
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 81.97088
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 82.30041
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 82.45964
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 82.78979
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 82.950554
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 83.10998
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 83.269905
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 83.440735
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 83.60082
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 3
+  - time: 83.76042
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 83.92042
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 84.08025
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 84.24944
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 84.40994
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 84.56984
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 85.22057
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 85.22057
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 86.02976
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 86.1903
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 86.35039
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 86.52062
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 86.680534
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 86.83941
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 87.00946
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 87.17086
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 87.490585
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 87.64907
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 87.819595
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 87.98069
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 88.13939
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 88.29971
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 88.62919
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 88.790054
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 88.95023
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 89.12064
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 89.28076
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 89.439766
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 89.60023
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 89.76994
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 89.93086
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 90.090866
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 90.259705
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 90.579605
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 90.74025
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 91.060776
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 91.22988
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 91.38947
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 91.54984
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 91.88046
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 92.03986
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 92.19992
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 92.36011
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 92.529205
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 92.69076
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 92.85036
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 93.179955
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 93.500885
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 93.83044
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 93.98917
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 94.14901
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 94.32086
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 94.48039
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 94.640854
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 94.80034
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 95.44932
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 95.779495
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 95.94043
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 96.42924
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 96.90904
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 97.23935
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 97.56059
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 97.56059
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 98.28979
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 98.54068
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 99.03067
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 99.35036
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 99.68041
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 99.83997
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 100.159706
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 101.14067
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 101.790565
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 102.10991
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 102.44008
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 102.75928
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 102.92094
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 103.2504
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 104.39069
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 104.86994
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 105.02973
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 105.3592
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 3
+  - time: 105.67959
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 105.839096
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 106.00938
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 106.16979
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 106.329315
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 106.65907
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 106.82053
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 106.979935
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 107.13932
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 107.47061
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 107.630684
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 107.789154
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 107.9605
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 108.12068
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 108.28001
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 108.44015
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 108.6107
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 108.76989
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 108.92993
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 109.08956
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 109.249306
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 109.73993
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 110.23024
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 110.38935
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 110.5509
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 110.709015
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 110.87923
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 111.03919
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 111.1994
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 111.360886
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 111.529175
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 111.68979
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 111.85026
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 112.009544
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 112.1691
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 112.34004
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 112.4993
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 2
+  - time: 112.66094
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 112.820366
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 112.99095
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 3
+  - time: 113.149414
+    lineIndex: 0
+    lineLayer: 2
+    type: 1
+    cutDirection: 4
+  - time: 113.64041
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 113.9603
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 114.13045
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 114.29092
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 114.450584
+    lineIndex: 3
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 114.77095
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 2
+  - time: 114.94017
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 115.09979
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 115.259544
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 115.41936
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 115.58029
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 115.750305
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 116.06984
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 116.23048
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 116.39051
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 116.55997
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 116.71996
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 116.879326
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 117.03934
+    lineIndex: 3
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 117.2101
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 117.37019
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 117.530975
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 117.69049
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 117.86098
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 118.0192
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 118.17948
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 118.34063
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 118.50076
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 2
+  - time: 118.65929
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 118.830605
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 118.98914
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 119.30993
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 3
+  - time: 119.80092
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 2
+  - time: 120.12052
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 4
+  - time: 120.449356
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 120.6108
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 120.77061
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 120.93049
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 121.08943
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 121.260414
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 121.41924
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 121.58082
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 121.740395
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 121.899734
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 122.229836
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 122.38989
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 122.5497
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 122.71073
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 122.86913
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 123.04043
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 123.19963
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 123.360085
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 123.52047
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 123.67912
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 123.8402
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 123.999245
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 124.17083
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 124.32925
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 124.48909
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 124.65073
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 124.80953
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 124.97961
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 125.139694
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 125.3004
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 125.46097
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 125.789055
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 125.789055
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 126.110825
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 126.110825
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 126.76053
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 126.91912
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 127.07908
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 127.400085
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 127.73012
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 128.21007
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 128.38043
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 128.70059
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 129.02052
+    lineIndex: 0
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 129.51009
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 129.67099
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 129.98962
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 130.1508
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 130.32059
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 130.47934
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 130.63913
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 130.79922
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 130.96072
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 131.13045
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 131.27925
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 131.43901
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 2
+  - time: 131.60977
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 131.75914
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 131.9299
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 132.09021
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 132.24957
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 132.41098
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 132.57053
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 132.74077
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 132.90085
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 133.06053
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 133.22078
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 133.37964
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 133.5409
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 133.70935
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 133.87071
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 133.87071
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 2
+  - time: 134.19043
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 134.35988
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 134.5101
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 134.67079
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 134.8294
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 134.8294
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 135.32013
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 135.47968
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 4
+  - time: 135.63962
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 135.80035
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 135.9599
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 136.12935
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 136.28964
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 136.44958
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 3
+  - time: 136.77016
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 2
+  - time: 137.41974
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 137.57924
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 3
+  - time: 137.73953
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 138.0597
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 138.22995
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 138.38907
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 138.54922
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 138.7106
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 139.0299
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 139.34996
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 139.8405
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 140.00095
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 140.3208
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 140.48918
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 140.63925
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 140.81007
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 140.97003
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 141.12993
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 141.28958
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 141.6098
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 142.4194
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 142.58058
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 142.89998
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 143.22021
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 143.38948
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 143.70961
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 144.0291
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 144.18906
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 144.67912
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 144.84091
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 145.00093
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 145.1599
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 4
+  - time: 145.48044
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 145.8009
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 146.13004
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 146.29028
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 146.45042
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 146.60905
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 146.77975
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 147.25975
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 147.41982
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 147.57904
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 147.73979
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 147.89925
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 148.06007
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 148.23085
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 148.39075
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 148.54901
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 148.71083
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 148.87033
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 149.03056
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 149.34961
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 149.67065
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 149.84958
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 149.99936
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 150.15913
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 150.32085
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 150.64014
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 150.9705
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 151.13007
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 151.29097
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 151.45001
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 3
+  - time: 151.61021
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 151.76909
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 151.92953
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 152.10062
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 152.2606
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 152.4193
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 152.5806
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 152.74092
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 152.89906
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 153.06084
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 153.22005
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 153.53995
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 153.7108
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 153.8692
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 154.03055
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 154.19089
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 154.34938
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 154.509
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 154.67923
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 154.82938
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 154.99933
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 155.31981
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 155.48003
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 155.64006
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 155.7999
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 155.95956
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 156.11925
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 156.29039
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 156.44911
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 156.61092
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 156.7707
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 156.93019
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 157.09097
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 157.57028
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 157.8992
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 158.05984
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 158.37979
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 158.70064
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 158.86098
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 159.03009
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 159.18947
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 159.51016
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 159.67061
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 159.98976
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 160.15015
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 160.47044
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 160.96072
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 0
+  - time: 161.27951
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 0
+  - time: 161.43944
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 161.60037
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 6
+  - time: 161.92049
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 162.08005
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 162.2404
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 162.57082
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 162.88992
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 163.05072
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 163.21037
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 163.37039
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 163.53038
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 163.84967
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 164.02058
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 164.17981
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 164.34099
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 164.49908
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 164.66006
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 164.82079
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 164.97958
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 165.13931
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 165.29904
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 165.46045
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 165.63068
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 165.78073
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 165.94908
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 5
+  - time: 166.10916
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 166.27068
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 166.43013
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 166.59068
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 166.74913
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 166.91061
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 167.06927
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 167.2308
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 167.39932
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 168.3606
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 168.51938
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 168.68042
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 168.84094
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 169.00047
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 169.1606
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 169.32098
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 169.48074
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 169.96912
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 169.96912
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 170.28938
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 170.45074
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 5
+  - time: 170.6093
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 170.7698
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 170.93042
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 171.08922
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 171.24916
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 3
+  - time: 171.40962
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 171.57053
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 171.729
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 171.89096
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 172.0502
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 172.20995
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 172.36926
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 172.53992
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 0
+  - time: 172.70079
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 172.85072
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 173.02081
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 173.17924
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 173.34076
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 173.49956
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 173.65948
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 173.81902
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 173.97961
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 174.13908
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 174.29912
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 174.46024
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 174.6196
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 174.77989
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 174.95071
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 175.10915
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 175.26917
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 175.4292
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 175.5903
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 175.75024
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 175.91072
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 176.07085
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 2
+  - time: 176.23033
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 176.40004
+    lineIndex: 1
+    lineLayer: 1
+    type: 0
+    cutDirection: 3
+  - time: 176.56004
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 176.71072
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 176.88092
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 177.04095
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 177.19913
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 177.35959
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 177.52002
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 177.67993
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 177.83931
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 178.00056
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 178.16066
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 178.31921
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 178.47919
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 178.63986
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 178.80086
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 178.96098
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 179.11954
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 179.27977
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 179.44086
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 179.60997
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 179.76924
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 179.93005
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 180.24977
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 180.24977
+    lineIndex: 0
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 180.56952
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 180.88988
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 5
+  - time: 181.04901
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 181.20908
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 6
+  - time: 181.37054
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 181.53043
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 181.6904
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 181.85086
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 182.01978
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 182.16913
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 182.33965
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 182.49971
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 182.6609
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 182.81908
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 2
+  - time: 182.98047
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 183.13913
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 5
+  - time: 183.2998
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 183.45964
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 183.61967
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 183.77982
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 183.93912
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 184.1009
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 6
+  - time: 184.1009
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 184.43077
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 184.58083
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 184.7403
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 184.90932
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 185.07045
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 185.2302
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 185.39003
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 185.551
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 185.70985
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 0
+  - time: 185.86937
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 0
+  - time: 186.02948
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 186.18938
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 186.34991
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 5
+  - time: 186.51035
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 186.66982
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 186.8303
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 186.98938
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 2
+  - time: 187.14941
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 187.3105
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 187.46933
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 3
+  - time: 187.62912
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 187.79012
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 187.95082
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 188.11066
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 1
+  - time: 188.26952
+    lineIndex: 2
+    lineLayer: 1
+    type: 0
+    cutDirection: 5
+  - time: 188.42934
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 188.60039
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 2
+  - time: 188.75974
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 188.91927
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 1
+  - time: 189.08008
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 189.24077
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 4
+  - time: 189.4108
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 189.57083
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 189.73978
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 4
+  - time: 189.89966
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 4
+  - time: 190.07077
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 7
+  - time: 190.24918
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 7
+  - time: 190.40903
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 4
+  - time: 190.5897
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 0
+  - time: 192.22997
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 192.89075
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 193.21938
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 193.3798
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 193.71036
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 193.87012
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 194.0402
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 194.36069
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 194.69934
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 194.86037
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 195.03088
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 195.191
+    lineIndex: 0
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 195.34982
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 195.6796
+    lineIndex: 0
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 195.8504
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 196.01906
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 196.1805
+    lineIndex: 3
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 196.3394
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 196.50974
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 196.66985
+    lineIndex: 3
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 196.83954
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 197.00038
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 197.17038
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 197.33928
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 197.49925
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 197.6705
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 197.82916
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 197.9991
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 198.15999
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 198.31921
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 198.4901
+    lineIndex: 2
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 198.66003
+    lineIndex: 1
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 198.8203
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 198.98906
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 199.15982
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 199.32062
+    lineIndex: 2
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 199.49031
+    lineIndex: 3
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 199.66093
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 199.82072
+    lineIndex: 1
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 199.99072
+    lineIndex: 0
+    lineLayer: 1
+    type: 0
+    cutDirection: 8
+  - time: 200.15976
+    lineIndex: 1
+    lineLayer: 0
+    type: 1
+    cutDirection: 8
+  - time: 200.31995
+    lineIndex: 0
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 200.49052
+    lineIndex: 2
+    lineLayer: 2
+    type: 1
+    cutDirection: 8
+  - time: 200.661
+    lineIndex: 2
+    lineLayer: 0
+    type: 0
+    cutDirection: 8
+  - time: 200.82033
+    lineIndex: 3
+    lineLayer: 1
+    type: 1
+    cutDirection: 8
+  - time: 200.99043
+    lineIndex: 1
+    lineLayer: 2
+    type: 0
+    cutDirection: 8
+  - time: 201.16078
+    lineIndex: 0
+    lineLayer: 0
+    type: 0
+    cutDirection: 8

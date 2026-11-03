@@ -195,21 +195,32 @@ public class Spawner : MonoBehaviour
             return;
         }
 
+        // 선택한 곡에 Beat Sage 채보가 있으면 채보 모드로 전환 (없으면 비트 감지 사용)
+        currentChart = BeatChart.FindForClip(clip);
+
+        // 채보는 Beat Sage 가 분석한 오디오 기준이므로 채보의 곡으로 재생해야 싱크가 맞음
+        if (currentChart != null && currentChart.song != null)
+        {
+            clip = currentChart.song;
+        }
+
         audioSource.clip = clip;
         audioSource.time = 0f;
         audioSource.Play();
         hasStartedTrack = true;
         nextEndCheckTime = Time.time + 0.5f;
         ResetBeatHistory();
-        SetupChart(clip);
+        SetupChart();
     }
 
-    // 선택한 곡에 Beat Sage 채보가 있으면 채보 모드로 전환 (없으면 비트 감지 사용)
-    void SetupChart(AudioClip clip)
+    void SetupChart()
     {
-        currentChart = BeatChart.FindForClip(clip);
         nextNoteIndex = 0;
-        if (currentChart == null) return;
+        if (currentChart == null)
+        {
+            Debug.Log($"[Spawner] No Beat Sage chart for '{audioSource.clip.name}', using beat detection.");
+            return;
+        }
 
         // 스포너가 바라보는 방향(-forward 반대)이 플레이어 쪽
         towardPlayer = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;

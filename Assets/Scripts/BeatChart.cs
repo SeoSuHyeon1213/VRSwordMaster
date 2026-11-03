@@ -54,6 +54,12 @@ public class BeatChart : ScriptableObject
             if (chart != null && chart.song == clip) return chart;
         }
 
+        // 곡 선택 화면이 다른 파일(예: Assets/Music 의 mp3)을 넘기는 경우 이름으로 찾음
+        foreach (var chart in cachedCharts)
+        {
+            if (chart != null && string.Equals(chart.name, clip.name, StringComparison.OrdinalIgnoreCase)) return chart;
+        }
+
         return null;
     }
 }
