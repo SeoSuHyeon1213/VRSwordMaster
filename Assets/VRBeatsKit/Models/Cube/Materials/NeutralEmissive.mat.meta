@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c68e007f15a797044bf0db010dd96597
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/Cube/Materials/NeutralEmissive.mat
+  uploadId: 546658

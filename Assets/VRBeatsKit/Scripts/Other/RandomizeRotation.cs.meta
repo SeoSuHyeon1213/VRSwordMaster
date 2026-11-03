@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3ad3946ef3ac7a24684c416b90596a9a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/Other/RandomizeRotation.cs
+  uploadId: 546658

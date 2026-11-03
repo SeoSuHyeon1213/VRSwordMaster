@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 049992b9d26c3294b9f7c03c4a684d70
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/UI/TrackSlot.prefab
+  uploadId: 546658

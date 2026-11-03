@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 999236c5aa99b6048a20b501bd8d4935
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/Other/Spark.cs
+  uploadId: 546658

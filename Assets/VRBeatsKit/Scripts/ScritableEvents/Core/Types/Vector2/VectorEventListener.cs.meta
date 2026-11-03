@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7f3e0ee29da9ef649a10a2161d2529ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/ScritableEvents/Core/Types/Vector2/VectorEventListener.cs
+  uploadId: 546658

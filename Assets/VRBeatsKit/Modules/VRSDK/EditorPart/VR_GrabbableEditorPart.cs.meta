@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: cb21e8b4bda1835478a8330c86f3ae1a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/EditorPart/VR_GrabbableEditorPart.cs
+  uploadId: 546658

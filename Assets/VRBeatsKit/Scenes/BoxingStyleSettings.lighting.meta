@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e5c89f6db87d55342b66fa71b7c67b68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scenes/BoxingStyleSettings.lighting
+  uploadId: 546658

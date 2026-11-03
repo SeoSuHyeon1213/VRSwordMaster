@@ -1,0 +1,79 @@
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using TMPro;
+
+[InitializeOnLoad]
+public static class NeonFontSetup
+{
+    const string k_DoneKey  = "NeonFontSetup_Done";
+    const string k_FontPath = "Assets/Fonts/Orbitron-Bold.ttf";
+    const string k_TmpPath  = "Assets/Fonts/Orbitron-Bold SDF.asset";
+    const string k_ScenePath = "Assets/Scenes/Intro.unity";
+
+    static NeonFontSetup()
+    {
+        if (EditorPrefs.GetBool(k_DoneKey, false)) return;
+        EditorApplication.delayCall += Run;
+    }
+
+    static void Run()
+    {
+        var srcFont = AssetDatabase.LoadAssetAtPath<Font>(k_FontPath);
+        if (srcFont == null)
+        {
+            Debug.LogError("[NeonFontSetup] Orbitron-Bold.ttf not found at " + k_FontPath);
+            return;
+        }
+
+        // TMP Font Asset 생성 (없을 때만)
+        var tmpFont = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(k_TmpPath);
+        if (tmpFont == null)
+        {
+            tmpFont = TMP_FontAsset.CreateFontAsset(srcFont);
+            AssetDatabase.CreateAsset(tmpFont, k_TmpPath);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            Debug.Log("[NeonFontSetup] TMP Font Asset created: " + k_TmpPath);
+        }
+
+        // Intro 씬을 열어 Game Start 버튼 텍스트에 폰트 적용
+        bool sceneWasOpen = false;
+        foreach (var s in UnityEngine.SceneManagement.SceneManager.GetAllScenes())
+            if (s.path == k_ScenePath) { sceneWasOpen = true; break; }
+
+        var scene = EditorSceneManager.OpenScene(k_ScenePath, OpenSceneMode.Additive);
+        bool changed = false;
+
+        foreach (var root in scene.GetRootGameObjects())
+        {
+            foreach (var tmp in root.GetComponentsInChildren<TextMeshProUGUI>(true))
+            {
+                if (tmp.text == "Game Start")
+                {
+                    tmp.font = tmpFont;
+                    EditorUtility.SetDirty(tmp);
+                    changed = true;
+                    Debug.Log("[NeonFontSetup] Font applied to: " + tmp.gameObject.name);
+                }
+            }
+        }
+
+        if (changed) EditorSceneManager.SaveScene(scene);
+        if (!sceneWasOpen) EditorSceneManager.CloseScene(scene, true);
+
+        EditorPrefs.SetBool(k_DoneKey, true);
+        Debug.Log("[NeonFontSetup] Done. Orbitron-Bold applied to Game Start button.");
+    }
+
+    // Unity 메뉴에서 수동으로 재실행 가능
+    [MenuItem("Tools/Neon Font/재적용")]
+    static void ReApply()
+    {
+        EditorPrefs.DeleteKey(k_DoneKey);
+        Run();
+    }
+
+    [MenuItem("Tools/Neon Font/초기화")]
+    static void Reset() => EditorPrefs.DeleteKey(k_DoneKey);
+}

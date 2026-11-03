@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 30abba6566eb65b4a9441f26e6c55eae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/Core/VR_SaberContainer.cs
+  uploadId: 546658

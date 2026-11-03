@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0908487f6c317af4e8d422d8e5fc107d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/Enviroment/Base/Materials/enviroment_suelo1.mat
+  uploadId: 546658

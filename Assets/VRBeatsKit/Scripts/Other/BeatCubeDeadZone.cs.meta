@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0efa3b0ee03961a40b9c0e3b566c2a89
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/Other/BeatCubeDeadZone.cs
+  uploadId: 546658

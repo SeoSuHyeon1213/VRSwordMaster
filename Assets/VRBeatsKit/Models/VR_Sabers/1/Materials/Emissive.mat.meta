@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f49cf94c9aaf73f4f8c48167bbf45d00
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/VR_Sabers/1/Materials/Emissive.mat
+  uploadId: 546658

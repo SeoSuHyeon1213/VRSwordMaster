@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fbabc026647dfc64b80f2d9517dd41a2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/FuturisticHand/Materials/FuturisticGloveLit_Mat_Red.mat
+  uploadId: 546658

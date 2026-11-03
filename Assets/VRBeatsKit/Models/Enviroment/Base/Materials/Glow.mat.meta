@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 39bfba28d755c22418ae35935b64b29f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/Enviroment/Base/Materials/Glow.mat
+  uploadId: 546658

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f5d43ad86a21ab1479a999e16359b99b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/PlayerSetup/MenuPlayer.prefab
+  uploadId: 546658

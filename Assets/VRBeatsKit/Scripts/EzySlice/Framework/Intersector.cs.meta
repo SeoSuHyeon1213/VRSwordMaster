@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 71ba56b257825394095ad07d669b4ecb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/EzySlice/Framework/Intersector.cs
+  uploadId: 546658

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1208e00e2eb0b704d8c37efdfad0da6b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/ScritableEvents/Core/Types/Float/FloatEventListener.cs
+  uploadId: 546658

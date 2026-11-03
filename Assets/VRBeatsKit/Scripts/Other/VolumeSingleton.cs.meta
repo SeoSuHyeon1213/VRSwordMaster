@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f1cf1a69a2048dc48b769f7289ca6b72
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/Other/VolumeSingleton.cs
+  uploadId: 546658

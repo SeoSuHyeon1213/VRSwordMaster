@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e2bbcb97a318d254e9b8751350ed7419
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/PlayerSetup/VRSDK_Controller_R.prefab
+  uploadId: 546658

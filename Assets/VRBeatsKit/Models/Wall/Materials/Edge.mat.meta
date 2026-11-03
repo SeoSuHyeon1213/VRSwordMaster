@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87e62c8ec38f61848b69dccb880b450a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/Wall/Materials/Edge.mat
+  uploadId: 546658

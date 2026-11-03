@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1a6f7e1018a14214b9b06894b8d53000
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/FuturisticHand/Animation/DefaultGrabAnimation.anim
+  uploadId: 546658

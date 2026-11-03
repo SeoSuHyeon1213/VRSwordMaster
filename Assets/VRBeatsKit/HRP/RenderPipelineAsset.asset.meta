@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 20f3c68a79e85014eb8275462192dbd6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/HRP/RenderPipelineAsset.asset
+  uploadId: 546658

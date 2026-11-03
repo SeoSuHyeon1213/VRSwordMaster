@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 95c798c31321b434b97df390ef7e6f48
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/Spawneable/Wall.prefab
+  uploadId: 546658

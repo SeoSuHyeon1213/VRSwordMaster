@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a3825a2e982e8a849baa900e14c416e0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRDamageSystem/Damageable.cs
+  uploadId: 546658

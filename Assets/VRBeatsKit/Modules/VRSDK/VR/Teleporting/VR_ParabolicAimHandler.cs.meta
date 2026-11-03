@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0388cd264756ae64ea86d7b60a3e6c1b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/VR/Teleporting/VR_ParabolicAimHandler.cs
+  uploadId: 546658

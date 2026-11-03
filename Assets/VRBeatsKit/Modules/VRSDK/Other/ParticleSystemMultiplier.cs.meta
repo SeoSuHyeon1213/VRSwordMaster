@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 039587c051912eb4ead9e58344c5f3ce
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/Other/ParticleSystemMultiplier.cs
+  uploadId: 546658

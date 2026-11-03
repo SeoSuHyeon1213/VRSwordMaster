@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8b2a9591e6d103a4c953549f35cdff46
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/PlayerSetup/BoxingStyle.prefab
+  uploadId: 546658

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c89253ab37e63ed4aa7b9bb47ec06613
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/EzySlice/Framework/Plane.cs
+  uploadId: 546658

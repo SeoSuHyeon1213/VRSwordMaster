@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 652ff2ee33cba5b47a1beda94f2269fd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/GameEvents/OnMineSlice.asset
+  uploadId: 546658

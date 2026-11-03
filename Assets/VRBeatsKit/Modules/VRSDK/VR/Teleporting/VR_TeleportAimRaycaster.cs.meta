@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: f3732281f0ab459096cd967e7d6bd4a1
+timeCreated: 1601750964
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/VR/Teleporting/VR_TeleportAimRaycaster.cs
+  uploadId: 546658

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: eec145ac06a74c54191ccf0649d2e498
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/ScritableEvents/Core/Types/Int/IntEventListener.cs
+  uploadId: 546658

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ab181a07ebefb2f46b5bb44e5b9ca80e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/Physics/HandPhysics.cs
+  uploadId: 546658

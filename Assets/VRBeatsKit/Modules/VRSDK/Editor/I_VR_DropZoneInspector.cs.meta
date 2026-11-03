@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a5869d5d67f00664c83d4a9c0b2d1095
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/Editor/I_VR_DropZoneInspector.cs
+  uploadId: 546658

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d59348dca6b9d334abcf862e7028cf9a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/GameEvents/OnCorrectSlice.asset
+  uploadId: 546658

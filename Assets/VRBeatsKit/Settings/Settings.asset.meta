@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 77da81612feecbe429ec290359d3547e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Settings/Settings.asset
+  uploadId: 546658

@@ -1,0 +1,140 @@
+using UnityEngine;
+
+public class Saber : MonoBehaviour
+{
+    public LayerMask layer;
+
+    [Header("Break Effect")]
+    [SerializeField] private GameObject breakEffectPrefab;
+    [SerializeField] private float effectLifeTime = 1.2f;
+
+    Vector3 prevPos;
+
+    void Start()
+    {
+        prevPos = transform.position;
+    }
+
+    void Update()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1, layer))
+        {
+            Vector3 v1 = transform.position - prevPos;
+
+            if (Vector3.Angle(v1, hit.transform.up) > 130)
+            {
+                if (ComboManager.Instance != null) ComboManager.Instance.AddCombo();
+                if (HealthManager.Instance != null) HealthManager.Instance.Heal();
+
+                PlayBreakEffect(hit);
+                Destroy(hit.transform.gameObject);
+            }
+        }
+
+        prevPos = transform.position;
+    }
+
+    void PlayBreakEffect(RaycastHit hit)
+    {
+        Color effectColor = GetEffectColor(hit.transform.gameObject);
+
+        if (breakEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(breakEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+            ApplyParticleColor(effect, effectColor);
+            Destroy(effect, effectLifeTime);
+            return;
+        }
+
+        GameObject burst = new GameObject("Break Effect");
+        burst.transform.position = hit.point;
+        burst.transform.rotation = Quaternion.LookRotation(hit.normal);
+
+        ParticleSystem particles = burst.AddComponent<ParticleSystem>();
+        ConfigureBurstParticles(particles, effectColor);
+
+        Destroy(burst, effectLifeTime);
+    }
+
+    Color GetEffectColor(GameObject target)
+    {
+        if (target.layer == LayerMask.NameToLayer("R"))
+            return Color.red;
+
+        if (target.layer == LayerMask.NameToLayer("B"))
+            return Color.cyan;
+
+        Renderer targetRenderer = target.GetComponentInChildren<Renderer>();
+        if (targetRenderer != null && targetRenderer.material != null)
+        {
+            if (targetRenderer.material.HasProperty("_EmissionColor"))
+                return targetRenderer.material.GetColor("_EmissionColor");
+
+            if (targetRenderer.material.HasProperty("_BaseColor"))
+                return targetRenderer.material.GetColor("_BaseColor");
+
+            return targetRenderer.material.color;
+        }
+
+        return Color.white;
+    }
+
+    void ConfigureBurstParticles(ParticleSystem particles, Color color)
+    {
+        var main = particles.main;
+        main.duration = 0.18f;
+        main.loop = false;
+        main.startLifetime = new ParticleSystem.MinMaxCurve(0.25f, 0.65f);
+        main.startSpeed = new ParticleSystem.MinMaxCurve(2.5f, 6f);
+        main.startSize = new ParticleSystem.MinMaxCurve(0.04f, 0.14f);
+        main.startColor = color;
+        main.simulationSpace = ParticleSystemSimulationSpace.World;
+
+        var emission = particles.emission;
+        emission.rateOverTime = 0f;
+        emission.SetBursts(new[]
+        {
+            new ParticleSystem.Burst(0f, 36)
+        });
+
+        var shape = particles.shape;
+        shape.shapeType = ParticleSystemShapeType.Cone;
+        shape.angle = 35f;
+        shape.radius = 0.12f;
+
+        var colorOverLifetime = particles.colorOverLifetime;
+        colorOverLifetime.enabled = true;
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(
+            new[]
+            {
+                new GradientColorKey(color, 0f),
+                new GradientColorKey(Color.white, 0.25f),
+                new GradientColorKey(color, 1f)
+            },
+            new[]
+            {
+                new GradientAlphaKey(1f, 0f),
+                new GradientAlphaKey(0f, 1f)
+            });
+        colorOverLifetime.color = gradient;
+
+        var trails = particles.trails;
+        trails.enabled = true;
+        trails.lifetime = 0.18f;
+        trails.ratio = 0.45f;
+
+        particles.Play();
+    }
+
+    void ApplyParticleColor(GameObject effect, Color color)
+    {
+        foreach (ParticleSystem particles in effect.GetComponentsInChildren<ParticleSystem>())
+        {
+            var main = particles.main;
+            main.startColor = color;
+        }
+    }
+}

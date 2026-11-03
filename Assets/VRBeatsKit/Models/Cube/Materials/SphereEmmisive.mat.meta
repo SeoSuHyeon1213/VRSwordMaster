@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a113664c7f91ecd40a6a77671e567870
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/Cube/Materials/SphereEmmisive.mat
+  uploadId: 546658

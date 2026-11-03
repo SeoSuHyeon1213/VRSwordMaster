@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 43c9fd6d02682df4cbabe2e6845c68da
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Materials/SwordMat.mat
+  uploadId: 546658

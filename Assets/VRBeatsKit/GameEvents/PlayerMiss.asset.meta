@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 64c69597d841fe943a9208e76c0b6361
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/GameEvents/PlayerMiss.asset
+  uploadId: 546658

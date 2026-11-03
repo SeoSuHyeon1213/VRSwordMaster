@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: b652d6b75b904b7cbdcc24f54ca67181
+timeCreated: 1669476741
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRDamageSystem/Events/OnDismemberEvent.cs
+  uploadId: 546658

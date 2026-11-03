@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4b9c3567c02662f4aabae4e4caf0a17d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/VR_Tags/VR_TagEnum.cs
+  uploadId: 546658

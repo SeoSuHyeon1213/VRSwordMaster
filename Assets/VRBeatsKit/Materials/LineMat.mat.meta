@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a7980a6db67125f47801f4031ae6e886
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Materials/LineMat.mat
+  uploadId: 546658

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b0482a3ce76a6b9478b2b380e8ee7fe0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/Spawneable/Spark.prefab
+  uploadId: 546658

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0c1fe70580def5e41bcb0e40dd75f8a2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRDamageSystem/Explosion.cs
+  uploadId: 546658

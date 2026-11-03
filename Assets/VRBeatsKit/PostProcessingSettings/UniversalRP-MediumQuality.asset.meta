@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d847b876476d3d6468f5dfcd34266f96
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/PostProcessingSettings/UniversalRP-MediumQuality.asset
+  uploadId: 546658

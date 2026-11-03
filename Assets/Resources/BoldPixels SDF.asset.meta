@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b39dd50cf07fcc944b4491f930dc7461
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 332078
+  packageName: BoldPixels
+  packageVersion: 1.5.0
+  assetPath: Assets/BoldPixels/Assets/font/BoldPixels SDF.asset
+  uploadId: 785910

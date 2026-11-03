@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 336be1081630a20448abc0dc1bc320a6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Prefabs/Spawneable/Mine.prefab
+  uploadId: 546658

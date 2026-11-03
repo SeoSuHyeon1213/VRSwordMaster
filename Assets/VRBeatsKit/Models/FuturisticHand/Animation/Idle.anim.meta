@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a6d452a95521dee45a05a098104e0e21
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Models/FuturisticHand/Animation/Idle.anim
+  uploadId: 546658

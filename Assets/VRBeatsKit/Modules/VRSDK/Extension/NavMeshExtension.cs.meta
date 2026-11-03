@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b49bcdb3c08aa5b48856d53c8fdb168a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Modules/VRSDK/Extension/NavMeshExtension.cs
+  uploadId: 546658

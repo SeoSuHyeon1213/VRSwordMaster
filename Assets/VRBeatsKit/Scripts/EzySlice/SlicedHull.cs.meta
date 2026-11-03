@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f7e48e12766dde74db3e00a40d97784c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 168243
+  packageName: VR Beats Kit
+  packageVersion: 2.0
+  assetPath: Assets/VRBeatsKit/Scripts/EzySlice/SlicedHull.cs
+  uploadId: 546658
