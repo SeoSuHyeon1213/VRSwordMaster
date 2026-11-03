@@ -21,6 +21,25 @@ public class Spawner : MonoBehaviour
     [Tooltip("분석할 베이스 주파수 범위 상한 인덱스 (0~1023). DnB 킥드럼: 약 20)")]
     public int bassRangeEnd = 20;
 
+    [Header("Beat Sage Chart")]
+    [Tooltip("노트가 날아오는 속도 (m/s)")]
+    public float noteSpeed = 2f;
+    [Tooltip("플레이어 앞 몇 m 지점에서 노트를 치게 할지")]
+    public float hitDistance = 1.2f;
+    [Tooltip("4x3 격자의 가로 간격 (m)")]
+    public float gridSpacingX = 0.45f;
+    [Tooltip("4x3 격자의 세로 간격 (m)")]
+    public float gridSpacingY = 0.4f;
+    [Tooltip("격자 가장 아랫줄의 높이 (m)")]
+    public float gridBottomHeight = 0.9f;
+
+    private BeatChart currentChart;
+    private int nextNoteIndex;
+    private Vector3 hitCenter;
+    private Vector3 towardPlayer;
+    private Vector3 playerRight;
+    private float appearDistance;
+
     private const int SpectrumSize = 1024;
     private const int HistorySize = 43;
 
@@ -95,6 +114,12 @@ public class Spawner : MonoBehaviour
 
         if (!audioSource.isPlaying)
             return;
+
+        if (currentChart != null)
+        {
+            UpdateChart();
+            return;
+        }
 
         audioSource.GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
 
@@ -176,6 +201,116 @@ public class Spawner : MonoBehaviour
         hasStartedTrack = true;
         nextEndCheckTime = Time.time + 0.5f;
         ResetBeatHistory();
+        SetupChart(clip);
+    }
+
+    // 선택한 곡에 Beat Sage 채보가 있으면 채보 모드로 전환 (없으면 비트 감지 사용)
+    void SetupChart(AudioClip clip)
+    {
+        currentChart = BeatChart.FindForClip(clip);
+        nextNoteIndex = 0;
+        if (currentChart == null) return;
+
+        // 스포너가 바라보는 방향(-forward 반대)이 플레이어 쪽
+        towardPlayer = Vector3.ProjectOnPlane(transform.forward, Vector3.up).normalized;
+        if (towardPlayer.sqrMagnitude < 0.001f) towardPlayer = Vector3.back;
+        playerRight = Vector3.Cross(Vector3.up, -towardPlayer).normalized;
+
+        Vector3 playerPos = GetPlayerPosition();
+        float playerToSpawner = Vector3.Dot(transform.position - playerPos, -towardPlayer);
+
+        // XR Origin 위치를 바닥으로 보고 격자 높이를 계산
+        hitCenter = playerPos - towardPlayer * hitDistance;
+        appearDistance = Mathf.Max(playerToSpawner - hitDistance, 1f);
+
+        Debug.Log($"[Spawner] Beat Sage chart: {currentChart.name} ({currentChart.difficulty}, {currentChart.notes.Count} notes)");
+    }
+
+    Vector3 GetPlayerPosition()
+    {
+        var origin = FindAnyObjectByType<Unity.XR.CoreUtils.XROrigin>();
+        if (origin != null) return origin.transform.position;
+
+        Camera cam = Camera.main;
+        return cam != null ? cam.transform.position : Vector3.zero;
+    }
+
+    void UpdateChart()
+    {
+        float songTime = (float)audioSource.timeSamples / audioSource.clip.frequency;
+        float lookAhead = appearDistance / Mathf.Max(noteSpeed, 0.01f);
+
+        while (nextNoteIndex < currentChart.notes.Count)
+        {
+            BeatChart.Note note = currentChart.notes[nextNoteIndex];
+            float timeUntilHit = note.time - songTime;
+            if (timeUntilHit > lookAhead) break;
+
+            nextNoteIndex++;
+            // 너무 늦은 노트(이미 지나간 시점)는 건너뜀
+            if (timeUntilHit < -0.1f) continue;
+
+            SpawnChartNote(note, timeUntilHit);
+        }
+    }
+
+    void SpawnChartNote(BeatChart.Note note, float timeUntilHit)
+    {
+        bool red = note.type == 0;
+        GameObject[] pool = red ? redCubes : blueCubes;
+        if (pool == null || pool.Length == 0) return;
+
+        Vector3 hitPos = hitCenter
+            + playerRight * ((note.lineIndex - 1.5f) * gridSpacingX)
+            + Vector3.up * (gridBottomHeight + note.lineLayer * gridSpacingY);
+
+        // 노트가 타격 지점에 note.time 에 도착하도록 현재 거리만큼 뒤에 생성
+        Vector3 spawnPos = hitPos - towardPlayer * (timeUntilHit * noteSpeed);
+
+        // Saber 는 transform.up 의 반대 방향으로 벨 때 인정하므로 up = -베는 방향
+        bool anyDirection = note.cutDirection == BeatChart.CutAny;
+        Vector2 cut = anyDirection ? Vector2.down : CutDirectionToVector(note.cutDirection);
+        Vector3 cutWorld = (playerRight * cut.x + Vector3.up * cut.y).normalized;
+        Quaternion rotation = Quaternion.LookRotation(-towardPlayer, -cutWorld);
+
+        GameObject obj = Instantiate(pool[Random.Range(0, pool.Length)], spawnPos, rotation, transform);
+        ApplyNoteColor(obj, red);
+
+        var cube = obj.GetComponentInChildren<Cube>();
+        if (cube != null)
+        {
+            cube.speed = noteSpeed;
+            cube.SetAnyDirection(anyDirection);
+        }
+    }
+
+    static Vector2 CutDirectionToVector(int cutDirection)
+    {
+        switch (cutDirection)
+        {
+            case BeatChart.CutUp: return Vector2.up;
+            case BeatChart.CutDown: return Vector2.down;
+            case BeatChart.CutLeft: return Vector2.left;
+            case BeatChart.CutRight: return Vector2.right;
+            case BeatChart.CutUpLeft: return new Vector2(-1f, 1f);
+            case BeatChart.CutUpRight: return new Vector2(1f, 1f);
+            case BeatChart.CutDownLeft: return new Vector2(-1f, -1f);
+            case BeatChart.CutDownRight: return new Vector2(1f, -1f);
+            default: return Vector2.down;
+        }
+    }
+
+    void ApplyNoteColor(GameObject obj, bool red)
+    {
+        SetLayerRecursively(obj, red ? layerR : layerB);
+
+        var bindings = obj.GetComponentInChildren<MaterialBindings>();
+        if (bindings != null)
+        {
+            Color color = red ? Color.red : Color.blue;
+            bindings.SetBaseColor(color);
+            bindings.SetEmmisiveColor(color);
+        }
     }
 
     void ResetBeatHistory()
@@ -194,8 +329,6 @@ public class Spawner : MonoBehaviour
     {
         bool spawnRed = Random.value > 0.5f;
         GameObject[] pool = spawnRed ? redCubes : blueCubes;
-        Color color = spawnRed ? Color.red : Color.blue;
-        int layer = spawnRed ? layerR : layerB;
 
         if (pool == null || pool.Length == 0) return;
         if (point == null || point.Length == 0) return;
@@ -206,14 +339,7 @@ public class Spawner : MonoBehaviour
         obj.transform.localPosition = Vector3.zero;
         obj.transform.Rotate(transform.forward, 90 * Random.Range(0, 4));
 
-        SetLayerRecursively(obj, layer);
-
-        var bindings = obj.GetComponentInChildren<MaterialBindings>();
-        if (bindings != null)
-        {
-            bindings.SetBaseColor(color);
-            bindings.SetEmmisiveColor(color);
-        }
+        ApplyNoteColor(obj, spawnRed);
     }
 
     void SetLayerRecursively(GameObject obj, int layer)

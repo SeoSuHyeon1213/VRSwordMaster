@@ -76,7 +76,11 @@ public class Saber : MonoBehaviour
 
             Vector3 v1 = transform.position - prevPos;
 
-            if (Vector3.Angle(v1, hit.transform.up) > 130)
+            Cube cube = hit.transform.GetComponentInParent<Cube>();
+            bool anyDirection = cube != null && cube.AnyDirection;
+
+            // '아무 방향' 노트는 검이 조금이라도 움직이며 닿으면 인정
+            if (anyDirection ? v1.sqrMagnitude > 0.0001f : Vector3.Angle(v1, hit.transform.up) > 130)
             {
                 if (ComboManager.Instance != null) ComboManager.Instance.AddCombo();
                 if (HealthManager.Instance != null) HealthManager.Instance.Heal();
