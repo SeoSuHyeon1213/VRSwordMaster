@@ -103,14 +103,48 @@ public static class BeatSageChartImporter
             return false;
         }
 
-        BeatmapInfo beatmap = PickBeatmap(info);
-        if (beatmap == null)
+        List<BeatmapInfo> beatmaps = PickBeatmaps(info);
+        if (beatmaps.Count == 0)
         {
             Debug.LogWarning($"[BeatSage] 난이도 정보가 없습니다: {infoPath}");
             return false;
         }
 
-        string beatmapPath = Path.Combine(folder, beatmap._beatmapFilename);
+        var levels = new List<BeatChart.Level>();
+        foreach (BeatmapInfo beatmap in beatmaps)
+        {
+            levels.Add(new BeatChart.Level
+            {
+                difficulty = beatmap._difficulty,
+                notes = ReadNotes(Path.Combine(folder, beatmap._beatmapFilename), info),
+            });
+        }
+
+        AudioClip song = ImportSong(folder, info._songFilename);
+
+        string songName = Path.GetFileName(folder);
+        EnsureFolder(k_OutputRoot);
+        string outPath = $"{k_OutputRoot}/{songName}.asset";
+
+        var chart = AssetDatabase.LoadAssetAtPath<BeatChart>(outPath);
+        bool isNew = chart == null;
+        if (isNew) chart = ScriptableObject.CreateInstance<BeatChart>();
+
+        // 사용자가 곡을 다른 AudioClip(예: 원본 mp3)으로 바꿔 둔 경우 유지
+        if (chart.song == null) chart.song = song;
+        chart.bpm = info._beatsPerMinute;
+        chart.levels = levels;
+
+        if (isNew) AssetDatabase.CreateAsset(chart, outPath);
+        EditorUtility.SetDirty(chart);
+
+        string summary = string.Join(", ", levels.Select(l => $"{l.difficulty} {l.notes.Count}개"));
+        Debug.Log($"[BeatSage] {songName}: {summary}, BPM {info._beatsPerMinute} -> {outPath}");
+        return true;
+    }
+
+    static List<BeatChart.Note> ReadNotes(string beatmapPath, InfoDat info)
+    {
         var data = JsonUtility.FromJson<BeatmapDat>(File.ReadAllText(beatmapPath));
 
         float secondsPerBeat = 60f / info._beatsPerMinute;
@@ -133,28 +167,7 @@ public static class BeatSageChartImporter
         }
 
         notes.Sort((a, b) => a.time.CompareTo(b.time));
-
-        AudioClip song = ImportSong(folder, info._songFilename);
-
-        string songName = Path.GetFileName(folder);
-        EnsureFolder(k_OutputRoot);
-        string outPath = $"{k_OutputRoot}/{songName}.asset";
-
-        var chart = AssetDatabase.LoadAssetAtPath<BeatChart>(outPath);
-        bool isNew = chart == null;
-        if (isNew) chart = ScriptableObject.CreateInstance<BeatChart>();
-
-        // 사용자가 곡을 다른 AudioClip(예: 원본 mp3)으로 바꿔 둔 경우 유지
-        if (chart.song == null) chart.song = song;
-        chart.difficulty = beatmap._difficulty;
-        chart.bpm = info._beatsPerMinute;
-        chart.notes = notes;
-
-        if (isNew) AssetDatabase.CreateAsset(chart, outPath);
-        EditorUtility.SetDirty(chart);
-
-        Debug.Log($"[BeatSage] {songName}: {beatmap._difficulty}, 노트 {notes.Count}개, BPM {info._beatsPerMinute} -> {outPath}");
-        return true;
+        return notes;
     }
 
     static BeatChart.Note MakeNote(float beat, int x, int y, int type, int dir, float secondsPerBeat, float offset)
@@ -169,20 +182,20 @@ public static class BeatSageChartImporter
         };
     }
 
-    static BeatmapInfo PickBeatmap(InfoDat info)
+    // Standard 세트의 모든 난이도를 높은 난이도부터 돌려준다
+    static List<BeatmapInfo> PickBeatmaps(InfoDat info)
     {
         var set = info._difficultyBeatmapSets.FirstOrDefault(s => s._beatmapCharacteristicName == "Standard")
                   ?? info._difficultyBeatmapSets.FirstOrDefault();
-        if (set?._difficultyBeatmaps == null || set._difficultyBeatmaps.Length == 0) return null;
+        if (set?._difficultyBeatmaps == null) return new List<BeatmapInfo>();
 
-        // 가장 높은 난이도를 사용
-        foreach (string difficulty in k_DifficultyOrder)
-        {
-            var match = set._difficultyBeatmaps.FirstOrDefault(b => b._difficulty == difficulty);
-            if (match != null) return match;
-        }
-
-        return set._difficultyBeatmaps[0];
+        return set._difficultyBeatmaps
+            .OrderBy(b =>
+            {
+                int rank = Array.IndexOf(k_DifficultyOrder, b._difficulty);
+                return rank < 0 ? k_DifficultyOrder.Length : rank;
+            })
+            .ToList();
     }
 
     // Unity 는 .egg 를 오디오로 인식하지 못하므로 .ogg 로 바꿔서 가져온다

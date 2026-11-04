@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -24,23 +25,261 @@ public class MusicSelectionUI : MonoBehaviour
     [SerializeField] private float canvasScale = 0.0032f;
     [SerializeField] private int selectedIndex;
     [SerializeField] private bool enableControllerInput = true;
-    [SerializeField] private bool buildPanelOnStart = false;
     [SerializeField] private float stickThreshold = 0.55f;
     [SerializeField] private float inputRepeatDelay = 0.32f;
 
+    // 레이가 버튼을 가리키는 중인지 추적한다. 가리키는 동안의 트리거는 해당 버튼의 클릭으로 처리한다
+    private class HoverTarget : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+        public static int Count;
+        private int pointers;
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            pointers++;
+            Count++;
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (pointers > 0)
+            {
+                pointers--;
+                Count--;
+            }
+        }
+
+        private void OnDisable()
+        {
+            Count -= pointers;
+            pointers = 0;
+        }
+    }
+
+    private enum Step
+    {
+        Start,
+        Song,
+        Difficulty,
+    }
+
+    private class DifficultyRow
+    {
+        public string difficulty;
+        public Image image;
+        public TextMeshProUGUI label;
+    }
+
     private const string PanelName = "MusicSelectionPanel";
+    private const string StartGroupName = "START";
     private const float CardSpacing = 430f;
+    private static readonly Color CardColor = new Color(1f, 0.24842751f, 0.2580632f, 0.85f);
+    private static readonly Color DimCardColor = new Color(1f, 0.24842751f, 0.2580632f, 0.3f);
 
     private RectTransform trackRoot;
     private readonly List<InputDevice> inputDevices = new();
+    private readonly List<DifficultyRow> difficultyRows = new();
+    private Step step;
+    private Transform startGroup;
+    private TMP_FontAsset uiFont;
     private float nextInputTime;
+    private bool wasTriggerPressed;
+    private bool wasPrimaryPressed;
+    private bool wasBackPressed;
+    private bool isLoading;
+
+    private void Awake()
+    {
+        // Intro 에도 Spawner 가 있으므로, 이전 판의 선택이 남아 있으면 인트로에서 곡이 재생된다
+        MusicSelection.Clear();
+    }
 
     private void Start()
     {
-        if (buildPanelOnStart)
+        if (canvasRoot != null)
         {
-            RebuildUI();
+            startGroup = canvasRoot.Find(StartGroupName);
+
+            var sceneText = canvasRoot.GetComponentInChildren<TMP_Text>(true);
+            if (sceneText != null)
+            {
+                uiFont = sceneText.font;
+            }
         }
+
+        // 이전 화면에서 누르고 있던 버튼이 바로 입력되지 않게 현재 상태로 시작
+        ReadButtons(out wasTriggerPressed, out wasPrimaryPressed, out wasBackPressed);
+
+        if (startGroup == null)
+        {
+            ShowSongStep();
+            return;
+        }
+
+        // 씬의 START 버튼은 GameScene 을 바로 불러오므로 곡 선택으로 연결을 바꾼다
+        var startButton = startGroup.GetComponentInChildren<Button>(true);
+        if (startButton != null)
+        {
+            startButton.onClick = new Button.ButtonClickedEvent();
+            startButton.onClick.AddListener(ShowSongStep);
+            startButton.gameObject.AddComponent<HoverTarget>();
+        }
+
+        ShowStartStep();
+    }
+
+    private void ShowStartStep()
+    {
+        step = Step.Start;
+        RemovePanels();
+        trackRoot = null;
+        startGroup.gameObject.SetActive(true);
+    }
+
+    private void ShowSongStep()
+    {
+        step = Step.Song;
+        if (startGroup != null)
+        {
+            startGroup.gameObject.SetActive(false);
+        }
+
+        RebuildUI();
+    }
+
+    private void ShowDifficultyStep()
+    {
+        if (GetCurrentOption() == null)
+        {
+            return;
+        }
+
+        step = Step.Difficulty;
+        BuildDifficultyPanel();
+    }
+
+    private void BuildDifficultyPanel()
+    {
+        RemovePanels();
+        trackRoot = null;
+        difficultyRows.Clear();
+
+        Transform panelRoot = CreatePanelRoot();
+        CreateTitle(panelRoot, $"<size=60%>{GetTitle(GetCurrentOption())}</size>\nSELECT DIFFICULTY");
+
+        string[] difficulties = MusicSelection.Difficulties;
+        const float rowSpacing = 112f;
+        float top = -22f + (difficulties.Length - 1) * rowSpacing * 0.5f;
+
+        for (int i = 0; i < difficulties.Length; i++)
+        {
+            string difficulty = difficulties[i];
+            Image image = CreateCard(
+                panelRoot,
+                $"Difficulty_{difficulty}",
+                new Vector2(380f, 96f),
+                new Vector2(0f, top - i * rowSpacing),
+                difficulty.ToUpperInvariant(),
+                () =>
+                {
+                    MusicSelection.SelectedDifficulty = difficulty;
+                    StartGame();
+                });
+
+            difficultyRows.Add(new DifficultyRow
+            {
+                difficulty = difficulty,
+                image = image,
+                label = image.GetComponentInChildren<TextMeshProUGUI>(),
+            });
+        }
+
+        CreateHint(panelRoot, "STICK UP/DOWN : MOVE    TRIGGER : START    B/Y : BACK");
+        RefreshDifficultyRows();
+    }
+
+    private void RefreshDifficultyRows()
+    {
+        foreach (DifficultyRow row in difficultyRows)
+        {
+            bool selected = row.difficulty == MusicSelection.SelectedDifficulty;
+            string upper = row.difficulty.ToUpperInvariant();
+            row.image.color = selected ? CardColor : DimCardColor;
+            row.label.text = selected ? $"> {upper} <" : upper;
+        }
+    }
+
+    // direction: -1 = 목록 위쪽, 1 = 목록 아래쪽. 끝에서 더 밀어도 순환하지 않는다
+    private void MoveDifficulty(int direction)
+    {
+        string[] difficulties = MusicSelection.Difficulties;
+        int current = System.Array.IndexOf(difficulties, MusicSelection.SelectedDifficulty);
+        int next = Mathf.Clamp(current + direction, 0, difficulties.Length - 1);
+        if (next == current)
+        {
+            return;
+        }
+
+        MusicSelection.SelectedDifficulty = difficulties[next];
+        RefreshDifficultyRows();
+    }
+
+    private void Confirm()
+    {
+        switch (step)
+        {
+            case Step.Start:
+                ShowSongStep();
+                break;
+            case Step.Song:
+                ShowDifficultyStep();
+                break;
+            case Step.Difficulty:
+                StartGame();
+                break;
+        }
+    }
+
+    private void GoBack()
+    {
+        if (step == Step.Difficulty)
+        {
+            ShowSongStep();
+        }
+        else if (step == Step.Song && startGroup != null)
+        {
+            ShowStartStep();
+        }
+    }
+
+    private void StartGame()
+    {
+        MusicOption option = GetCurrentOption();
+        if (isLoading || option == null)
+        {
+            return;
+        }
+
+        isLoading = true;
+        MusicSelection.Select(option.clip, GetTitle(option));
+        SceneManager.LoadScene(targetSceneName);
+    }
+
+    private MusicOption GetCurrentOption()
+    {
+        ClampSelectedIndex();
+        if (options == null || options.Length == 0)
+        {
+            return null;
+        }
+
+        MusicOption option = options[selectedIndex];
+        return option != null && option.clip != null ? option : null;
+    }
+
+    private static string GetTitle(MusicOption option)
+    {
+        return string.IsNullOrWhiteSpace(option.title) ? option.clip.name : option.title;
     }
 
     private void Update()
@@ -62,22 +301,35 @@ public class MusicSelectionUI : MonoBehaviour
     [ContextMenu("Build Music Selection Panel")]
     public void RebuildUI()
     {
-        Transform parent = canvasRoot != null ? canvasRoot : null;
         ClampSelectedIndex();
+        RemovePanels();
 
-        if (parent == null)
+        Transform panelRoot = CreatePanelRoot();
+        CreateTitle(panelRoot, "SELECT MUSIC");
+        CreateCarousel(panelRoot);
+        CreateHint(panelRoot, "STICK LEFT/RIGHT : MOVE    TRIGGER : SELECT    B/Y : BACK");
+    }
+
+    private Transform GetPanelParent()
+    {
+        if (canvasRoot == null)
         {
-            parent = CreateStandaloneCanvas().transform;
-        }
-        else
-        {
-            EnsureCanvasRaycasters(parent.gameObject);
+            return CreateStandaloneCanvas().transform;
         }
 
-        RemoveExistingPanels(parent);
+        EnsureCanvasRaycasters(canvasRoot.gameObject);
+        return canvasRoot;
+    }
 
+    private void RemovePanels()
+    {
+        RemoveExistingPanels(GetPanelParent());
+    }
+
+    private Transform CreatePanelRoot()
+    {
         var panelRoot = new GameObject(PanelName);
-        panelRoot.transform.SetParent(parent, false);
+        panelRoot.transform.SetParent(GetPanelParent(), false);
 
         var rootRt = panelRoot.AddComponent<RectTransform>();
         rootRt.sizeDelta = canvasSize;
@@ -92,8 +344,8 @@ public class MusicSelectionUI : MonoBehaviour
             18f,
             new Color(0.15f, 1f, 1f, 1f),
             new Color(0.1f, 0.8f, 1f, 0.32f));
-        CreateTitle(panelRoot.transform);
-        CreateCarousel(panelRoot.transform);
+
+        return panelRoot.transform;
     }
 
     [ContextMenu("Remove Music Selection Panel")]
@@ -111,6 +363,8 @@ public class MusicSelectionUI : MonoBehaviour
             Transform child = parent.GetChild(i);
             if (child.name == PanelName)
             {
+                // Destroy 는 프레임 끝에 처리되므로 먼저 꺼서 바로 사라지게 한다
+                child.gameObject.SetActive(false);
                 DestroyGeneratedObject(child.gameObject);
             }
         }
@@ -131,7 +385,36 @@ public class MusicSelectionUI : MonoBehaviour
         image.color = new Color(0.02f, 0.02f, 0.06f, 0.78f);
     }
 
-    private void CreateTitle(Transform parent)
+    private void CreateHint(Transform parent, string text)
+    {
+        var hintObj = new GameObject("Hint");
+        hintObj.transform.SetParent(parent, false);
+
+        var hintRt = hintObj.AddComponent<RectTransform>();
+        hintRt.anchorMin = new Vector2(0f, 0f);
+        hintRt.anchorMax = new Vector2(1f, 0f);
+        hintRt.pivot = new Vector2(0.5f, 0f);
+        hintRt.anchoredPosition = new Vector2(0f, 18f);
+        hintRt.sizeDelta = new Vector2(-32f, 40f);
+
+        var hint = hintObj.AddComponent<TextMeshProUGUI>();
+        hint.alignment = TextAlignmentOptions.Center;
+        hint.fontSize = 20f;
+        hint.color = new Color(1f, 1f, 1f, 0.75f);
+        hint.raycastTarget = false;
+        hint.text = text;
+        ApplyFont(hint);
+    }
+
+    private void ApplyFont(TMP_Text text)
+    {
+        if (uiFont != null)
+        {
+            text.font = uiFont;
+        }
+    }
+
+    private void CreateTitle(Transform parent, string text)
     {
         var titleObj = new GameObject("Title");
         titleObj.transform.SetParent(parent, false);
@@ -147,7 +430,9 @@ public class MusicSelectionUI : MonoBehaviour
         titleText.alignment = TextAlignmentOptions.Center;
         titleText.fontSize = 42f;
         titleText.color = new Color(0.2f, 1f, 1f, 1f);
-        titleText.text = "SELECT MUSIC";
+        titleText.raycastTarget = false;
+        titleText.text = text;
+        ApplyFont(titleText);
     }
 
     private void CreateCarousel(Transform parent)
@@ -186,54 +471,121 @@ public class MusicSelectionUI : MonoBehaviour
                 continue;
             }
 
-            var buttonObj = new GameObject($"MusicCard_{i + 1}");
-            buttonObj.transform.SetParent(trackRoot, false);
-
-            var buttonRt = buttonObj.AddComponent<RectTransform>();
-            buttonRt.sizeDelta = new Vector2(380f, 160f);
-            buttonRt.anchoredPosition = new Vector2(i * CardSpacing, 0f);
-
-            var image = buttonObj.AddComponent<Image>();
-            image.sprite = buttonSprite;
-            image.type = Image.Type.Simple;
-            image.color = new Color(1f, 0.24842751f, 0.2580632f, 0.85f);
-            image.raycastTarget = true;
-
-            CreateNeonBorder(
-                buttonObj.transform,
-                "CardNeonBorder",
-                4f,
-                14f,
-                new Color(0.1f, 1f, 1f, 1f),
-                new Color(1f, 0.2f, 0.85f, 0.34f));
-
-            var button = buttonObj.AddComponent<Button>();
-            button.targetGraphic = image;
-
-            ColorBlock colors = button.colors;
-            colors.normalColor = Color.white;
-            colors.highlightedColor = new Color(0.9685534f, 0.3807206f, 0.38710162f, 1f);
-            colors.pressedColor = new Color(1f, 0.2f, 0.8f, 1f);
-            colors.selectedColor = new Color(0.70440245f, 0.35220113f, 0.6326825f, 1f);
-            colors.disabledColor = new Color(0.3f, 0.3f, 0.5f, 0.5f);
-            colors.colorMultiplier = 1f;
-            colors.fadeDuration = 0.1f;
-            button.colors = colors;
-
-            string title = string.IsNullOrWhiteSpace(option.title) ? option.clip.name : option.title;
-            AudioClip clip = option.clip;
-            button.onClick.AddListener(() => SelectMusic(clip, title));
-
-            CreateButtonLabel(buttonObj.transform, title);
+            int index = i;
+            CreateCard(
+                trackRoot,
+                $"MusicCard_{i + 1}",
+                new Vector2(380f, 160f),
+                new Vector2(i * CardSpacing, 0f),
+                GetTitle(option),
+                () =>
+                {
+                    selectedIndex = index;
+                    ShowDifficultyStep();
+                });
         }
+    }
+
+    private Image CreateCard(
+        Transform parent,
+        string objectName,
+        Vector2 size,
+        Vector2 position,
+        string title,
+        UnityEngine.Events.UnityAction action)
+    {
+        var buttonObj = new GameObject(objectName);
+        buttonObj.transform.SetParent(parent, false);
+
+        var buttonRt = buttonObj.AddComponent<RectTransform>();
+        buttonRt.sizeDelta = size;
+        buttonRt.anchoredPosition = position;
+
+        var image = buttonObj.AddComponent<Image>();
+        image.sprite = buttonSprite;
+        image.type = Image.Type.Simple;
+        image.color = CardColor;
+        image.raycastTarget = true;
+
+        CreateNeonBorder(
+            buttonObj.transform,
+            "CardNeonBorder",
+            4f,
+            14f,
+            new Color(0.1f, 1f, 1f, 1f),
+            new Color(1f, 0.2f, 0.85f, 0.34f));
+
+        var button = buttonObj.AddComponent<Button>();
+        button.targetGraphic = image;
+
+        ColorBlock colors = button.colors;
+        colors.normalColor = Color.white;
+        colors.highlightedColor = new Color(0.9685534f, 0.3807206f, 0.38710162f, 1f);
+        colors.pressedColor = new Color(1f, 0.2f, 0.8f, 1f);
+        colors.selectedColor = new Color(0.70440245f, 0.35220113f, 0.6326825f, 1f);
+        colors.disabledColor = new Color(0.3f, 0.3f, 0.5f, 0.5f);
+        colors.colorMultiplier = 1f;
+        colors.fadeDuration = 0.1f;
+        button.colors = colors;
+
+        button.onClick.AddListener(action);
+        buttonObj.AddComponent<HoverTarget>();
+
+        CreateButtonLabel(buttonObj.transform, title);
+        return image;
     }
 
     private void HandleControllerInput()
     {
-        if (!enableControllerInput || Time.unscaledTime < nextInputTime)
+        if (!enableControllerInput || isLoading)
         {
             return;
         }
+
+        ReadButtons(out bool trigger, out bool primary, out bool back);
+        bool triggerDown = trigger && !wasTriggerPressed;
+        bool primaryDown = primary && !wasPrimaryPressed;
+        bool backDown = back && !wasBackPressed;
+        wasTriggerPressed = trigger;
+        wasPrimaryPressed = primary;
+        wasBackPressed = back;
+
+        // 레이로 버튼을 가리키고 있으면 트리거는 그 버튼의 클릭으로 처리된다
+        if (primaryDown || (triggerDown && HoverTarget.Count == 0))
+        {
+            Confirm();
+            return;
+        }
+
+        if (backDown)
+        {
+            GoBack();
+            return;
+        }
+
+        if (Time.unscaledTime < nextInputTime)
+        {
+            return;
+        }
+
+        Vector2 stick = ReadStick();
+        if (step == Step.Song && Mathf.Abs(stick.x) >= stickThreshold)
+        {
+            MoveSelection(stick.x > 0f ? 1 : -1);
+            ConsumeControllerInput();
+        }
+        else if (step == Step.Difficulty && Mathf.Abs(stick.y) >= stickThreshold)
+        {
+            MoveDifficulty(stick.y > 0f ? -1 : 1);
+            ConsumeControllerInput();
+        }
+    }
+
+    private void ReadButtons(out bool trigger, out bool primary, out bool back)
+    {
+        trigger = false;
+        primary = false;
+        back = false;
 
         inputDevices.Clear();
         InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Controller, inputDevices);
@@ -241,37 +593,26 @@ public class MusicSelectionUI : MonoBehaviour
         for (int i = 0; i < inputDevices.Count; i++)
         {
             InputDevice device = inputDevices[i];
-            if (!device.isValid)
-            {
-                continue;
-            }
+            trigger |= IsPressed(device, CommonUsages.triggerButton);
+            primary |= IsPressed(device, CommonUsages.primaryButton);
+            back |= IsPressed(device, CommonUsages.secondaryButton);
+        }
+    }
 
-            if (device.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axis))
+    // ReadButtons 가 같은 프레임에 채운 컨트롤러 목록에서 가장 크게 기울인 스틱 값을 읽는다
+    private Vector2 ReadStick()
+    {
+        Vector2 stick = Vector2.zero;
+        for (int i = 0; i < inputDevices.Count; i++)
+        {
+            if (inputDevices[i].TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 axis)
+                && axis.sqrMagnitude > stick.sqrMagnitude)
             {
-                if (axis.x <= -stickThreshold)
-                {
-                    MoveSelection(-1);
-                    ConsumeControllerInput();
-                    return;
-                }
-
-                if (axis.x >= stickThreshold)
-                {
-                    MoveSelection(1);
-                    ConsumeControllerInput();
-                    return;
-                }
-            }
-
-            if (IsPressed(device, CommonUsages.primaryButton)
-                || IsPressed(device, CommonUsages.triggerButton)
-                || IsPressed(device, CommonUsages.gripButton))
-            {
-                SelectCurrentMusic();
-                ConsumeControllerInput();
-                return;
+                stick = axis;
             }
         }
+
+        return stick;
     }
 
     private bool IsPressed(InputDevice device, InputFeatureUsage<bool> button)
@@ -310,6 +651,7 @@ public class MusicSelectionUI : MonoBehaviour
         var button = buttonObj.AddComponent<Button>();
         button.targetGraphic = image;
         button.onClick.AddListener(action);
+        buttonObj.AddComponent<HoverTarget>();
 
         ColorBlock colors = button.colors;
         colors.normalColor = Color.white;
@@ -339,7 +681,9 @@ public class MusicSelectionUI : MonoBehaviour
         label.alignment = TextAlignmentOptions.Center;
         label.fontSize = 40f;
         label.color = Color.white;
+        label.raycastTarget = false;
         label.text = title;
+        ApplyFont(label);
     }
 
     private void CreateArrowLabel(Transform parent, string symbol)
@@ -358,7 +702,9 @@ public class MusicSelectionUI : MonoBehaviour
         label.fontSize = 52f;
         label.fontStyle = FontStyles.Bold;
         label.color = Color.white;
+        label.raycastTarget = false;
         label.text = symbol;
+        ApplyFont(label);
     }
 
     private void CreateNeonBorder(
@@ -459,31 +805,6 @@ public class MusicSelectionUI : MonoBehaviour
     private int GetValidOptionCount()
     {
         return options == null ? 0 : options.Length;
-    }
-
-    private void SelectCurrentMusic()
-    {
-        if (options == null || options.Length == 0)
-        {
-            return;
-        }
-
-        ClampSelectedIndex();
-
-        MusicOption option = options[selectedIndex];
-        if (option == null || option.clip == null)
-        {
-            return;
-        }
-
-        string title = string.IsNullOrWhiteSpace(option.title) ? option.clip.name : option.title;
-        SelectMusic(option.clip, title);
-    }
-
-    private void SelectMusic(AudioClip clip, string title)
-    {
-        MusicSelection.Select(clip, title);
-        SceneManager.LoadScene(targetSceneName);
     }
 
     private void AddTrackedDeviceRaycaster(GameObject canvasObj)

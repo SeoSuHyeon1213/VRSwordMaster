@@ -32,13 +32,31 @@ public class BeatChart : ScriptableObject
         public int cutDirection;
     }
 
+    [Serializable]
+    public class Level
+    {
+        public string difficulty;
+        public List<Note> notes = new List<Note>();
+    }
+
     [Tooltip("이 채보와 함께 재생할 곡. 곡 선택 화면에서 같은 AudioClip 을 고르면 이 채보가 사용된다")]
     public AudioClip song;
-    public string difficulty;
     public float bpm;
-    public List<Note> notes = new List<Note>();
+    [Tooltip("난이도별 노트 (높은 난이도부터)")]
+    public List<Level> levels = new List<Level>();
 
     static BeatChart[] cachedCharts;
+
+    // 해당 난이도가 없는 곡이면 가장 높은 난이도를 돌려준다
+    public Level GetLevel(string difficulty)
+    {
+        foreach (var level in levels)
+        {
+            if (level.difficulty == difficulty) return level;
+        }
+
+        return levels.Count > 0 ? levels[0] : null;
+    }
 
     public static BeatChart FindForClip(AudioClip clip)
     {

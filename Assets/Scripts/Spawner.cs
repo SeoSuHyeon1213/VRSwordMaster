@@ -11,8 +11,6 @@ public class Spawner : MonoBehaviour
     public AudioClip[] playlist;
     public bool useSelectedMusic = true;
 
-    private int currentTrackIndex = 0;
-
     [Header("Beat Detection")]
     [Tooltip("평균 에너지 대비 몇 배 이상일 때 비트로 감지할지 (값이 클수록 강한 비트만 감지)")]
     public float sensitivity = 3.5f;
@@ -34,6 +32,7 @@ public class Spawner : MonoBehaviour
     public float gridBottomHeight = 0.9f;
 
     private BeatChart currentChart;
+    private BeatChart.Level currentLevel;
     private int nextNoteIndex;
     private Vector3 hitCenter;
     private Vector3 towardPlayer;
@@ -76,7 +75,6 @@ public class Spawner : MonoBehaviour
         if (useSelectedMusic && MusicSelection.SelectedClip != null)
         {
             clipToPlay = MusicSelection.SelectedClip;
-            currentTrackIndex = FindPlaylistIndex(clipToPlay);
         }
         else if (playlist != null && playlist.Length > 0)
         {
@@ -85,8 +83,7 @@ public class Spawner : MonoBehaviour
                 Debug.LogWarning("Selected music is empty. Playing the first playlist track instead.");
             }
 
-            currentTrackIndex = Mathf.Clamp(currentTrackIndex, 0, playlist.Length - 1);
-            clipToPlay = playlist[currentTrackIndex];
+            clipToPlay = playlist[0];
         }
 
         if (clipToPlay == null)
@@ -104,10 +101,12 @@ public class Spawner : MonoBehaviour
 
         if (hasStartedTrack && audioSource.clip != null && !audioSource.isPlaying && Time.time >= nextEndCheckTime)
         {
-            bool reachedEnd = audioSource.time >= audioSource.clip.length - 0.15f;
+            // 재생이 끝나면 AudioSource 의 위치가 0 으로 돌아갈 수 있어 두 경우를 모두 확인
+            bool reachedEnd = audioSource.timeSamples == 0 || audioSource.time >= audioSource.clip.length - 0.15f;
             if (reachedEnd)
             {
-                PlayNextPlaylistTrack();
+                hasStartedTrack = false;
+                if (HealthManager.Instance != null) HealthManager.Instance.ShowSongClear();
                 return;
             }
         }
@@ -115,7 +114,7 @@ public class Spawner : MonoBehaviour
         if (!audioSource.isPlaying)
             return;
 
-        if (currentChart != null)
+        if (currentLevel != null)
         {
             UpdateChart();
             return;
@@ -151,42 +150,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    int FindPlaylistIndex(AudioClip clip)
-    {
-        if (clip == null || playlist == null) return -1;
-
-        for (int i = 0; i < playlist.Length; i++)
-        {
-            if (playlist[i] == clip)
-            {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-    void PlayNextPlaylistTrack()
-    {
-        if (playlist == null || playlist.Length == 0)
-        {
-            hasStartedTrack = false;
-            Debug.LogWarning("Playlist is empty. No next track to play.");
-            return;
-        }
-
-        if (currentTrackIndex < 0 || currentTrackIndex >= playlist.Length)
-        {
-            currentTrackIndex = 0;
-        }
-        else
-        {
-            currentTrackIndex = (currentTrackIndex + 1) % playlist.Length;
-        }
-
-        PlayClip(playlist[currentTrackIndex]);
-    }
-
     void PlayClip(AudioClip clip)
     {
         if (clip == null)
@@ -197,6 +160,7 @@ public class Spawner : MonoBehaviour
 
         // 선택한 곡에 Beat Sage 채보가 있으면 채보 모드로 전환 (없으면 비트 감지 사용)
         currentChart = BeatChart.FindForClip(clip);
+        currentLevel = currentChart != null ? currentChart.GetLevel(MusicSelection.SelectedDifficulty) : null;
 
         // 채보는 Beat Sage 가 분석한 오디오 기준이므로 채보의 곡으로 재생해야 싱크가 맞음
         if (currentChart != null && currentChart.song != null)
@@ -216,7 +180,7 @@ public class Spawner : MonoBehaviour
     void SetupChart()
     {
         nextNoteIndex = 0;
-        if (currentChart == null)
+        if (currentLevel == null)
         {
             Debug.Log($"[Spawner] No Beat Sage chart for '{audioSource.clip.name}', using beat detection.");
             return;
@@ -234,7 +198,7 @@ public class Spawner : MonoBehaviour
         hitCenter = playerPos - towardPlayer * hitDistance;
         appearDistance = Mathf.Max(playerToSpawner - hitDistance, 1f);
 
-        Debug.Log($"[Spawner] Beat Sage chart: {currentChart.name} ({currentChart.difficulty}, {currentChart.notes.Count} notes)");
+        Debug.Log($"[Spawner] Beat Sage chart: {currentChart.name} ({currentLevel.difficulty}, {currentLevel.notes.Count} notes)");
     }
 
     Vector3 GetPlayerPosition()
@@ -251,9 +215,9 @@ public class Spawner : MonoBehaviour
         float songTime = (float)audioSource.timeSamples / audioSource.clip.frequency;
         float lookAhead = appearDistance / Mathf.Max(noteSpeed, 0.01f);
 
-        while (nextNoteIndex < currentChart.notes.Count)
+        while (nextNoteIndex < currentLevel.notes.Count)
         {
-            BeatChart.Note note = currentChart.notes[nextNoteIndex];
+            BeatChart.Note note = currentLevel.notes[nextNoteIndex];
             float timeUntilHit = note.time - songTime;
             if (timeUntilHit > lookAhead) break;
 
